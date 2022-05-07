@@ -1,0 +1,25 @@
+{
+    "name": "Bot 83",
+    "description": "Nothing",
+    "keywords": [
+        "BOT",
+    ],
+    "website": "google.com",
+    "repository": "https://github.com/reelur/sefouh",
+    "success_url": "/",
+    "env": {
+        "API_TOKEN": {
+            "description": "API Token , get it from @BotFather"
+        },
+        "START_MSG": {
+           "description": "Enter Custom Start Message"
+    }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "image": "heroku/php"
+}
