@@ -19,7 +19,7 @@ $premiums = file_get_contents('users.txt');
 $premium = explode("\n", $premiums);
 $group = file_get_contents('groups.txt');
 $groups = explode("\n", $group);
-if($userId == '1981863218') {
+if($userId == '1851425938') {
 $usernam = ''.$username.'%0A [Owner]';
 }
 else {
